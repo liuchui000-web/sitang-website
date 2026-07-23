@@ -23,7 +23,10 @@ const resourceFor = (element) => (
 
 const loadDeferredImage = (image) => {
   if (!image || image.src || !image.dataset.src) return;
-  image.src = resourceFor(image);
+  const url = resourceFor(image);
+  image.src = url;
+  const philosophyPage = image.closest('.philosophy-page');
+  if (philosophyPage) philosophyPage.style.setProperty('--art-bg', `url("${url}")`);
 };
 
 const loadDeferredGroup = (container) => {
