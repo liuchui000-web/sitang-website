@@ -14,19 +14,70 @@ navLinks.forEach((link) => link.addEventListener('click', () => {
   document.body.style.overflow = '';
 }));
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.14, rootMargin: '0px 0px -5% 0px' });
+const isMobile = () => window.matchMedia('(max-width: 800px)').matches;
+const resourceFor = (element) => (
+  isMobile() && element.dataset.srcMobile
+    ? element.dataset.srcMobile
+    : element.dataset.src
+);
 
-document.querySelectorAll('.reveal').forEach((element, index) => {
+const loadDeferredImage = (image) => {
+  if (!image || image.src || !image.dataset.src) return;
+  image.src = resourceFor(image);
+};
+
+const loadDeferredGroup = (container) => {
+  container?.querySelectorAll('.deferred-panel-media').forEach(loadDeferredImage);
+};
+
+const revealElements = [...document.querySelectorAll('.reveal')];
+revealElements.forEach((element, index) => {
   element.style.transitionDelay = `${Math.min(index % 3, 2) * 90}ms`;
-  observer.observe(element);
+  if (element.getBoundingClientRect().top > window.innerHeight * .9) {
+    element.classList.add('will-reveal');
+  }
 });
+
+if ('IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px 8% 0px' });
+
+  revealElements.filter((element) => element.classList.contains('will-reveal'))
+    .forEach((element) => revealObserver.observe(element));
+
+  const mediaObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      loadDeferredImage(entry.target);
+      mediaObserver.unobserve(entry.target);
+    });
+  }, { rootMargin: '260px 0px' });
+  document.querySelectorAll('.lazy-media').forEach((image) => mediaObserver.observe(image));
+
+  const backgroundObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const url = isMobile() && entry.target.dataset.bgMobile
+        ? entry.target.dataset.bgMobile
+        : entry.target.dataset.bg;
+      if (url) entry.target.style.setProperty('--lazy-bg', `url("${url}")`);
+      backgroundObserver.unobserve(entry.target);
+    });
+  }, { rootMargin: '260px 0px' });
+  document.querySelectorAll('.lazy-bg').forEach((element) => backgroundObserver.observe(element));
+} else {
+  revealElements.forEach((element) => element.classList.add('is-visible'));
+  document.querySelectorAll('.lazy-media').forEach(loadDeferredImage);
+  document.querySelectorAll('.lazy-bg').forEach((element) => {
+    const url = isMobile() && element.dataset.bgMobile ? element.dataset.bgMobile : element.dataset.bg;
+    if (url) element.style.setProperty('--lazy-bg', `url("${url}")`);
+  });
+}
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 
@@ -46,6 +97,7 @@ const showTherapyPage = (page) => {
   therapyPages.forEach((item, index) => item.classList.toggle('is-active', index === therapyPage));
   therapyDots.forEach((dot, index) => dot.classList.toggle('is-active', index === therapyPage));
   therapyCount.textContent = String(therapyPage + 1).padStart(2, '0');
+  loadDeferredGroup(therapyPages[therapyPage]);
 };
 
 const setTherapyOpen = (open) => {
@@ -83,6 +135,8 @@ const visualClose = document.querySelector('.visual-close');
 const visualScroll = document.querySelector('.visual-scroll');
 const visualTabs = [...document.querySelectorAll('.visual-tabs button')];
 const visualVideo = document.querySelector('.visual-film video');
+const filmFrame = document.querySelector('.film-frame');
+const filmPlay = document.querySelector('.film-play');
 const visualEnter = document.querySelector('.visual-enter');
 
 const setVisualOpen = (open) => {
@@ -91,6 +145,7 @@ const setVisualOpen = (open) => {
   visualCard.setAttribute('aria-expanded', String(open));
   document.body.classList.toggle('visual-open', open);
   if (open) {
+    loadDeferredGroup(visualPanel.querySelector('.visual-cover'));
     visualScroll.scrollTop = 0;
     visualClose.focus();
   } else {
@@ -109,16 +164,40 @@ visualCard.addEventListener('keydown', (event) => {
 });
 visualClose.addEventListener('click', () => setVisualOpen(false));
 visualEnter.addEventListener('click', () => {
+  loadDeferredGroup(document.querySelector('#visual-illustration'));
   document.querySelector('#visual-illustration').scrollIntoView({ behavior: 'smooth' });
 });
 visualTabs.forEach((tab) => tab.addEventListener('click', () => {
+  if (tab.dataset.visualGo === 'illustration') {
+    loadDeferredGroup(document.querySelector('#visual-illustration'));
+  } else if (!visualVideo.poster) {
+    visualVideo.poster = visualVideo.dataset.poster;
+  }
   document.querySelector(`#visual-${tab.dataset.visualGo}`).scrollIntoView({ behavior: 'smooth' });
 }));
 visualScroll.addEventListener('scroll', () => {
   const filmTop = document.querySelector('#visual-film').offsetTop;
   const inFilm = visualScroll.scrollTop > filmTop - window.innerHeight * .45;
+  if (visualScroll.scrollTop > document.querySelector('#visual-illustration').offsetTop - window.innerHeight) {
+    loadDeferredGroup(document.querySelector('#visual-illustration'));
+  }
+  if (inFilm && !visualVideo.poster) visualVideo.poster = visualVideo.dataset.poster;
   visualTabs.forEach((tab) => tab.classList.toggle('is-active', (tab.dataset.visualGo === 'film') === inFilm));
 });
+filmPlay.addEventListener('click', async () => {
+  if (!visualVideo.src) {
+    visualVideo.src = visualVideo.dataset.videoSrc;
+    visualVideo.controls = true;
+    visualVideo.load();
+  }
+  filmFrame.classList.add('is-playing');
+  try {
+    await visualVideo.play();
+  } catch {
+    filmFrame.classList.remove('is-playing');
+  }
+});
+visualVideo.addEventListener('error', () => filmFrame.classList.remove('is-playing'));
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && visualPanel.classList.contains('is-open')) setVisualOpen(false);
 });
@@ -139,6 +218,7 @@ const showProductPage = (page) => {
   productsPages.forEach((item, index) => item.classList.toggle('is-active', index === productPage));
   productsDots.forEach((dot, index) => dot.classList.toggle('is-active', index === productPage));
   productsCount.textContent = String(productPage + 1).padStart(2, '0');
+  loadDeferredGroup(productsPages[productPage]);
 };
 
 const setProductsOpen = (open) => {

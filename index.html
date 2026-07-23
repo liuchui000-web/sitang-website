@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="斯棠 SITANG——从自然出发，在设计与生活之间，寻找温柔而长久的可能。" />
     <title>斯棠｜SITANG</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23090909'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='36' fill='%23f4f0e8'%3ES%3C/text%3E%3C/svg%3E" />
+    <link rel="preload" as="image" href="assets/sitang-logo.jpg" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -25,7 +27,7 @@
     <main>
       <section class="hero dark" id="home" aria-labelledby="hero-title">
         <div class="hero-mark reveal">
-          <img src="assets/sitang-logo.jpg" alt="斯棠 SITANG 品牌图形" />
+          <img src="assets/sitang-logo.jpg" alt="斯棠 SITANG 品牌图形" width="1080" height="1080" fetchpriority="high" decoding="async" />
         </div>
         <div class="hero-copy reveal">
           <p class="eyebrow">斯棠 · 始于二〇二六</p>
@@ -38,7 +40,9 @@
         </a>
       </section>
 
-      <section class="about paper" id="about" aria-labelledby="about-title">
+      <section class="about paper lazy-bg" id="about" aria-labelledby="about-title"
+        data-bg="assets/optimized/assets-philosophy-original-03.webp"
+        data-bg-mobile="assets/optimized/assets-philosophy-original-03-mobile.webp">
         <div class="section-number reveal">01</div>
         <div class="about-content reveal">
           <p class="eyebrow">ABOUT SITANG</p>
@@ -52,7 +56,7 @@
       <section class="philosophy" id="philosophy" aria-labelledby="philosophy-title">
         <h2 class="sr-only" id="philosophy-title">斯棠理念</h2>
         <article class="philosophy-page philosophy-one">
-          <img src="assets/philosophy/original-01.png" alt="暗色岩壁中的微小红色种子" />
+          <img class="lazy-media" data-src="assets/optimized/assets-philosophy-original-01.webp" data-src-mobile="assets/optimized/assets-philosophy-original-01-mobile.webp" alt="暗色岩壁中的微小红色种子" width="1672" height="941" loading="lazy" decoding="async" />
           <div class="philosophy-copy reveal">
             <h3>斯棠宇宙</h3>
             <p class="philosophy-major">精神飞地</p>
@@ -60,7 +64,7 @@
           </div>
         </article>
         <article class="philosophy-page philosophy-two">
-          <img src="assets/philosophy/original-02.png" alt="暗色背景上的有机矿物形态" loading="lazy" />
+          <img class="lazy-media" data-src="assets/optimized/assets-philosophy-original-02.webp" data-src-mobile="assets/optimized/assets-philosophy-original-02-mobile.webp" alt="暗色背景上的有机矿物形态" width="1672" height="941" loading="lazy" decoding="async" />
           <div class="philosophy-copy reveal">
             <h3>对高度紧绷的温柔反叛</h3>
             <p class="philosophy-major">唤醒对放松与沉默<br />接受的原始冲动。</p>
@@ -68,14 +72,14 @@
           </div>
         </article>
         <article class="philosophy-page philosophy-three philosophy-light">
-          <img src="assets/philosophy/original-03.png" alt="骨白手工纸上的细线与墨点" loading="lazy" />
+          <img class="lazy-media" data-src="assets/optimized/assets-philosophy-original-03.webp" data-src-mobile="assets/optimized/assets-philosophy-original-03-mobile.webp" alt="骨白手工纸上的细线与墨点" width="1672" height="941" loading="lazy" decoding="async" />
           <div class="philosophy-copy reveal">
             <p class="philosophy-major">在贫瘠与留白中放弃挣扎，<br />让神经技术能去生长。</p>
             <p class="philosophy-minor">最小化感官刺激和信息密度，<br />让精神“被动舒展”而非主动控制。</p>
           </div>
         </article>
         <article class="philosophy-page philosophy-four philosophy-light">
-          <img src="assets/philosophy/original-04.png" alt="云与暮色之间的雾感风景" loading="lazy" />
+          <img class="lazy-media" data-src="assets/optimized/assets-philosophy-original-04.webp" data-src-mobile="assets/optimized/assets-philosophy-original-04-mobile.webp" alt="云与暮色之间的雾感风景" width="1672" height="941" loading="lazy" decoding="async" />
           <div class="philosophy-copy reveal">
             <h3>不经意的照见</h3>
             <p class="philosophy-major">在看云与看夕阳之间，释放情绪的重负。<br />只是观望它、照见它、觉知它。</p>
@@ -83,7 +87,7 @@
           </div>
         </article>
         <article class="philosophy-page philosophy-five">
-          <img src="assets/philosophy/original-05.png" alt="深黑色岩层与不规则纹理" loading="lazy" />
+          <img class="lazy-media" data-src="assets/optimized/assets-philosophy-original-05.webp" data-src-mobile="assets/optimized/assets-philosophy-original-05-mobile.webp" alt="深黑色岩层与不规则纹理" width="1672" height="941" loading="lazy" decoding="async" />
           <div class="philosophy-copy reveal">
             <h3>苛刻的美学戒律</h3>
             <p class="philosophy-major">非设计的存在：不试图讨好，不主动表达。<br />向内折叠：缺席带来的在场感。</p>
@@ -91,7 +95,7 @@
           </div>
         </article>
         <article class="philosophy-page philosophy-six">
-          <img src="assets/philosophy/original-06.png" alt="暗色空间中的沉重种子形体" loading="lazy" />
+          <img class="lazy-media" data-src="assets/optimized/assets-philosophy-original-06.webp" data-src-mobile="assets/optimized/assets-philosophy-original-06-mobile.webp" alt="暗色空间中的沉重种子形体" width="1672" height="941" loading="lazy" decoding="async" />
           <div class="philosophy-copy reveal">
             <p class="philosophy-minor">在无规则的留白中</p>
             <p class="philosophy-major">找回本能与重力<br />的精神飞地。</p>
@@ -99,13 +103,17 @@
         </article>
       </section>
 
-      <section class="directions paper" id="directions" aria-labelledby="directions-title">
+      <section class="directions paper lazy-bg" id="directions" aria-labelledby="directions-title"
+        data-bg="assets/optimized/assets-philosophy-original-05.webp"
+        data-bg-mobile="assets/optimized/assets-philosophy-original-05-mobile.webp">
         <div class="section-heading reveal">
           <p class="eyebrow">THREE DIRECTIONS</p>
           <h2 id="directions-title">斯棠目前围绕<br />三个方向持续探索。</h2>
         </div>
         <div class="card-grid">
-          <article class="direction-card card-nature reveal" role="button" tabindex="0" aria-controls="natural-therapy" aria-expanded="false">
+          <article class="direction-card card-nature reveal lazy-bg" role="button" tabindex="0" aria-controls="natural-therapy" aria-expanded="false"
+            data-bg="assets/optimized/assets-natural-therapy-therapy-cover-philosophy.webp"
+            data-bg-mobile="assets/optimized/assets-natural-therapy-therapy-cover-philosophy-mobile.webp">
             <div class="card-art" aria-hidden="true"><span>01</span><i></i></div>
             <div class="card-copy">
               <p class="card-index">自然 · NATURAL</p>
@@ -114,7 +122,9 @@
               <span class="card-arrow" aria-hidden="true">↗</span>
             </div>
           </article>
-          <article class="direction-card card-visual reveal" role="button" tabindex="0" aria-controls="sitang-visual" aria-expanded="false">
+          <article class="direction-card card-visual reveal lazy-bg" role="button" tabindex="0" aria-controls="sitang-visual" aria-expanded="false"
+            data-bg="assets/optimized/assets-visual-visual-cover-philosophy.webp"
+            data-bg-mobile="assets/optimized/assets-visual-visual-cover-philosophy-mobile.webp">
             <div class="card-art" aria-hidden="true"><span>02</span><i></i></div>
             <div class="card-copy">
               <p class="card-index">表达 · VISUAL</p>
@@ -123,7 +133,9 @@
               <span class="card-arrow" aria-hidden="true">↗</span>
             </div>
           </article>
-          <article class="direction-card card-product reveal" role="button" tabindex="0" aria-controls="ecology-products" aria-expanded="false">
+          <article class="direction-card card-product reveal lazy-bg" role="button" tabindex="0" aria-controls="ecology-products" aria-expanded="false"
+            data-bg="assets/optimized/assets-ecology-products-products-cover-philosophy.webp"
+            data-bg-mobile="assets/optimized/assets-ecology-products-products-cover-philosophy-mobile.webp">
             <div class="card-art" aria-hidden="true"><span>03</span><i></i></div>
             <div class="card-copy">
               <p class="card-index">日常 · ECOLOGY</p>
@@ -139,7 +151,7 @@
         <button class="therapy-close" type="button" aria-label="关闭自然疗法介绍"><span></span><span></span></button>
         <div class="therapy-pages">
           <article class="therapy-page is-active therapy-cover" data-page="0">
-            <img class="therapy-background" src="assets/natural-therapy/therapy-cover-philosophy.png" alt="暗色矿物与半透明涟漪中的朱红种子" />
+            <img class="therapy-background deferred-panel-media" data-src="assets/optimized/assets-natural-therapy-therapy-cover-philosophy.webp" data-src-mobile="assets/optimized/assets-natural-therapy-therapy-cover-philosophy-mobile.webp" alt="暗色矿物与半透明涟漪中的朱红种子" width="1672" height="941" decoding="async" />
             <div class="therapy-shade" aria-hidden="true"></div>
             <div class="therapy-content">
               <p class="eyebrow">NATURAL THERAPIES · 自然疗法</p>
@@ -149,7 +161,7 @@
             </div>
           </article>
           <article class="therapy-page therapy-aroma" data-page="1">
-            <img class="therapy-background" src="assets/natural-therapy/aromatherapy.png" alt="草木枝叶与淡淡香雾" />
+            <img class="therapy-background deferred-panel-media" data-src="assets/optimized/assets-natural-therapy-aromatherapy.webp" data-src-mobile="assets/optimized/assets-natural-therapy-aromatherapy-mobile.webp" alt="草木枝叶与淡淡香雾" width="1672" height="941" decoding="async" />
             <div class="therapy-shade" aria-hidden="true"></div>
             <div class="therapy-content">
               <p class="therapy-index">01 · AROMATHERAPY</p>
@@ -159,7 +171,7 @@
             </div>
           </article>
           <article class="therapy-page therapy-senses" data-page="2">
-            <img class="therapy-background" src="assets/natural-therapy/five-sense-aroma.png" alt="光影、水纹、薄雾与纤维交汇的感官空间" />
+            <img class="therapy-background deferred-panel-media" data-src="assets/optimized/assets-natural-therapy-five-sense-aroma.webp" data-src-mobile="assets/optimized/assets-natural-therapy-five-sense-aroma-mobile.webp" alt="光影、水纹、薄雾与纤维交汇的感官空间" width="1672" height="941" decoding="async" />
             <div class="therapy-shade" aria-hidden="true"></div>
             <div class="therapy-content">
               <p class="therapy-index">02 · FIVE-SENSE AROMA</p>
@@ -169,7 +181,7 @@
             </div>
           </article>
           <article class="therapy-page therapy-tea" data-page="3">
-            <img class="therapy-background" src="assets/natural-therapy/zen-tea.png" alt="幽暗水面上的一盏静茶" />
+            <img class="therapy-background deferred-panel-media" data-src="assets/optimized/assets-natural-therapy-zen-tea.webp" data-src-mobile="assets/optimized/assets-natural-therapy-zen-tea-mobile.webp" alt="幽暗水面上的一盏静茶" width="1672" height="941" decoding="async" />
             <div class="therapy-shade" aria-hidden="true"></div>
             <div class="therapy-content">
               <p class="therapy-index">03 · ZEN TEA</p>
@@ -201,7 +213,7 @@
         </nav>
         <div class="visual-scroll">
           <section class="visual-cover">
-            <img src="assets/visual/visual-cover-philosophy.png" alt="黑色材质表层被骨白裂隙与朱红色痕迹打开" />
+            <img class="deferred-panel-media" data-src="assets/optimized/assets-visual-visual-cover-philosophy.webp" data-src-mobile="assets/optimized/assets-visual-visual-cover-philosophy-mobile.webp" alt="黑色材质表层被骨白裂隙与朱红色痕迹打开" width="1672" height="941" decoding="async" />
             <div class="visual-cover-shade" aria-hidden="true"></div>
             <div class="visual-cover-copy">
               <p class="eyebrow">SITANG VISUAL · 斯棠视觉</p>
@@ -218,19 +230,19 @@
             </header>
             <div class="visual-gallery">
               <figure class="visual-work visual-work-wide">
-                <img src="斯棠ai视觉插画/22db717c2ecd677e264f99c3890a682d.jpg" alt="女子将朱红色液体倾入墨色水面" />
+                <img class="deferred-panel-media" data-src="assets/optimized/斯棠ai视觉插画-22db717c2ecd677e264f99c3890a682d.webp" data-src-mobile="assets/optimized/斯棠ai视觉插画-22db717c2ecd677e264f99c3890a682d-mobile.webp" alt="女子将朱红色液体倾入墨色水面" width="1600" height="1195" loading="lazy" decoding="async" />
                 <figcaption><span>01</span><p>倾注</p><small>把积存于身体的河流，交还给大地。</small></figcaption>
               </figure>
               <figure class="visual-work visual-work-tall">
-                <img src="斯棠ai视觉插画/29e9e2acfd851a7c43ad27757cf661c9.png" alt="长发女子静坐于朱红涟漪之间" loading="lazy" />
+                <img class="deferred-panel-media" data-src="assets/optimized/斯棠ai视觉插画-29e9e2acfd851a7c43ad27757cf661c9.webp" data-src-mobile="assets/optimized/斯棠ai视觉插画-29e9e2acfd851a7c43ad27757cf661c9-mobile.webp" alt="长发女子静坐于朱红涟漪之间" width="1600" height="1195" loading="lazy" decoding="async" />
                 <figcaption><span>02</span><p>静观</p><small>当我们停止追问，内在的水面才开始显影。</small></figcaption>
               </figure>
               <figure class="visual-work">
-                <img src="斯棠ai视觉插画/847b3d29c8b6a5e2e134d9f501ccc4af.jpg" alt="女子在花树下俯身与长发相拥" loading="lazy" />
+                <img class="deferred-panel-media" data-src="assets/optimized/斯棠ai视觉插画-847b3d29c8b6a5e2e134d9f501ccc4af.webp" data-src-mobile="assets/optimized/斯棠ai视觉插画-847b3d29c8b6a5e2e134d9f501ccc4af-mobile.webp" alt="女子在花树下俯身与长发相拥" width="1600" height="1195" loading="lazy" decoding="async" />
                 <figcaption><span>03</span><p>照见</p><small>弯下身，并非屈服；是为了听见更深处的自己。</small></figcaption>
               </figure>
               <figure class="visual-work visual-work-wide">
-                <img src="斯棠ai视觉插画/f716d3472c90fb15a8d0d0eea1173ca7.png" alt="长发女子在花野中倾出朱红色河流" loading="lazy" />
+                <img class="deferred-panel-media" data-src="assets/optimized/斯棠ai视觉插画-f716d3472c90fb15a8d0d0eea1173ca7.webp" data-src-mobile="assets/optimized/斯棠ai视觉插画-f716d3472c90fb15a8d0d0eea1173ca7-mobile.webp" alt="长发女子在花野中倾出朱红色河流" width="1600" height="1195" loading="lazy" decoding="async" />
                 <figcaption><span>04</span><p>丰盛</p><small>当生命不再收束，荒野也会循着本能开花。</small></figcaption>
               </figure>
             </div>
@@ -242,10 +254,12 @@
               <p>影像不是对现实的复述，<br />而是一道入口——通往身体记得、语言却忘记的地方。</p>
             </div>
             <div class="film-frame">
-              <video controls playsinline preload="metadata" poster="斯棠ai视觉插画/f716d3472c90fb15a8d0d0eea1173ca7.png">
-                <source src="斯棠ai视觉插画/43a619773a293a5801578867358a870d.mp4" type="video/mp4" />
+              <video playsinline preload="none"
+                data-video-src="斯棠ai视觉插画/43a619773a293a5801578867358a870d.mp4"
+                data-poster="assets/optimized/斯棠ai视觉插画-f716d3472c90fb15a8d0d0eea1173ca7-mobile.webp">
                 您的浏览器暂不支持视频播放。
               </video>
+              <button class="film-play" type="button" aria-label="播放斯棠影像·蛾"><span>▶</span><small>播放影像</small></button>
               <div class="film-meta"><span>斯棠影像 · 蛾</span><span>在轮回中，寻找真我。</span></div>
             </div>
             <p class="film-ending">一帧是呼吸，一幕是回声。<br />我们在光影之间，练习重新感知万物。</p>
@@ -258,7 +272,7 @@
         <button class="products-close" type="button" aria-label="关闭生态产品介绍"><span></span><span></span></button>
         <div class="products-pages">
           <article class="products-page is-active products-cover" data-product-page="0">
-            <img class="products-background" src="assets/ecology-products/products-cover-philosophy.png" alt="暗色土地中生长出的半透明原材容器" />
+            <img class="products-background deferred-panel-media" data-src="assets/optimized/assets-ecology-products-products-cover-philosophy.webp" data-src-mobile="assets/optimized/assets-ecology-products-products-cover-philosophy-mobile.webp" alt="暗色土地中生长出的半透明原材容器" width="1672" height="941" decoding="async" />
             <div class="products-shade" aria-hidden="true"></div>
             <div class="products-content">
               <p class="eyebrow">SITANG ECOLOGY · 产地与日常</p>
@@ -268,7 +282,7 @@
             </div>
           </article>
           <article class="products-page products-border" data-product-page="1">
-            <img class="products-background" src="assets/ecology-products/border-tea-coffee.png" alt="边境山雾中的茶叶与咖啡果" />
+            <img class="products-background deferred-panel-media" data-src="assets/optimized/assets-ecology-products-border-tea-coffee.webp" data-src-mobile="assets/optimized/assets-ecology-products-border-tea-coffee-mobile.webp" alt="边境山雾中的茶叶与咖啡果" width="1672" height="941" decoding="async" />
             <div class="products-shade" aria-hidden="true"></div>
             <div class="products-content products-content-right">
               <p class="products-index">01 · BORDER TEA &amp; COFFEE</p>
@@ -278,7 +292,7 @@
             </div>
           </article>
           <article class="products-page products-nest" data-product-page="2">
-            <img class="products-background" src="assets/ecology-products/myanmar-birds-nest.png" alt="岩隙光线中的缅甸燕窝" />
+            <img class="products-background deferred-panel-media" data-src="assets/optimized/assets-ecology-products-myanmar-birds-nest.webp" data-src-mobile="assets/optimized/assets-ecology-products-myanmar-birds-nest-mobile.webp" alt="岩隙光线中的缅甸燕窝" width="1672" height="941" decoding="async" />
             <div class="products-shade" aria-hidden="true"></div>
             <div class="products-content">
               <p class="products-index">02 · MYANMAR BIRD'S NEST</p>
@@ -288,7 +302,7 @@
             </div>
           </article>
           <article class="products-page products-farm" data-product-page="3">
-            <img class="products-background" src="assets/ecology-products/farm-produce.png" alt="泥土上的稻穗、豆荚与根茎作物" />
+            <img class="products-background deferred-panel-media" data-src="assets/optimized/assets-ecology-products-farm-produce.webp" data-src-mobile="assets/optimized/assets-ecology-products-farm-produce-mobile.webp" alt="泥土上的稻穗、豆荚与根茎作物" width="1672" height="941" decoding="async" />
             <div class="products-shade" aria-hidden="true"></div>
             <div class="products-content">
               <p class="products-index">03 · FARM PRODUCE</p>
@@ -312,7 +326,9 @@
         </div>
       </section>
 
-      <section class="vision vermilion" id="vision" aria-labelledby="vision-title">
+      <section class="vision vermilion lazy-bg" id="vision" aria-labelledby="vision-title"
+        data-bg="assets/optimized/assets-vision-lighter-life-bg.webp"
+        data-bg-mobile="assets/optimized/assets-vision-lighter-life-bg-mobile.webp">
         <div class="vision-orbit" aria-hidden="true"></div>
         <div class="vision-copy reveal">
           <p class="eyebrow">TOWARDS THE FUTURE</p>
@@ -322,7 +338,9 @@
         <p class="vision-note reveal">愿我们始终保有<br />感知万物的能力。</p>
       </section>
 
-      <section class="contact dark" id="contact" aria-labelledby="contact-title">
+      <section class="contact dark lazy-bg" id="contact" aria-labelledby="contact-title"
+        data-bg="assets/optimized/assets-closing-closing-red-blue-black.webp"
+        data-bg-mobile="assets/optimized/assets-closing-closing-red-blue-black-mobile.webp">
         <div class="contact-heading reveal">
           <p class="eyebrow">SITANG · EPILOGUE</p>
           <h2 id="contact-title">万物有其来处，<br />我们仍在生长。</h2>
