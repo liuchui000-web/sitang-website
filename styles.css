@@ -246,7 +246,15 @@ footer { display: flex; justify-content: space-between; margin-top: auto; paddin
   .visual-close { top: 16px; right: 18px; }.visual-tabs { top: 20px; left: 20px; gap: 16px; }.visual-tabs button { font-size: 10px; }
   .visual-cover-copy { left: 24px; right: 24px; top: auto; bottom: 90px; width: auto; transform: none; }.visual-cover-copy h2 { font-size: 42px; }.visual-cover-copy > p:not(.eyebrow) { margin-top: 26px; font-size: 12px; }.visual-enter { margin-top: 28px; }.visual-cover > img { object-position: 62% center; }
   .visual-illustration { padding: 110px 24px 90px; }.visual-heading { display: block; margin-bottom: 55px; }.visual-heading h2, .film-copy h2 { font-size: 42px; }.visual-heading > p:last-child { margin-top: 30px; }
-  .visual-gallery { display: block; }.visual-work, .visual-work:nth-child(2), .visual-work:nth-child(3), .visual-work:nth-child(4) { margin: 0 0 55px; }.visual-work img, .visual-work-tall img, .visual-work-wide img { aspect-ratio: 4 / 3; }
+  .visual-gallery { display: block; }
+  .visual-work, .visual-work:nth-child(2), .visual-work:nth-child(3), .visual-work:nth-child(4) { margin: 0 0 55px; }
+  .visual-work img, .visual-work-tall img, .visual-work-wide img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
   .visual-film { padding: 105px 24px 50px; }.film-copy { display: block; margin-bottom: 45px; }.film-copy > p:last-child { margin-top: 30px; }.film-frame video { max-height: 62vh; }.film-meta { display: grid; gap: 8px; }.film-ending { margin-top: 50px; font-size: 16px; }.film-credit { margin-top: 55px; font-size: 10px; }
   .products-close { top: 20px; right: 20px; }.products-content, .products-content-right { left: 24px; right: 24px; top: auto; bottom: 112px; width: auto; transform: none; }.products-content h2 { font-size: 42px; }
   .products-index { margin-bottom: 16px; }.products-lead { margin: 24px 0 10px; font-size: 18px; }.products-body, .products-intro { font-size: 12px; line-height: 1.85; }.products-intro { margin-top: 24px; }.products-enter { margin-top: 28px; }.products-ending { margin-top: 22px; }
