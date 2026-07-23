@@ -334,8 +334,37 @@ footer { display: flex; justify-content: space-between; margin-top: auto; paddin
   .directions { background-attachment: scroll; }
   .about { background-position: 35% center; }
   .vision { background-position: 58% center; }
-  .contact { background-position: 34% center; }
-  .closing-copy { grid-template-columns: 1fr; gap: 24px; width: 100%; margin-top: 30px; }.closing-copy p { font-size: 14px; }
+  .contact {
+    min-height: 100svh;
+    padding: 112px 24px 28px;
+    background-position: center;
+  }
+  .contact-heading { margin-bottom: 0; }
+  .contact h2 {
+    font-size: clamp(42px, 12vw, 54px);
+    line-height: 1.28;
+  }
+  .closing-copy {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 22px;
+    width: 100%;
+    margin: clamp(70px, 11vh, 110px) 0 0;
+  }
+  .closing-copy p {
+    font-size: clamp(11px, 3vw, 13px);
+    line-height: 2;
+    letter-spacing: .06em;
+  }
+  .contact footer {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: auto;
+    padding-top: 70px;
+  }
+  .contact footer > p { margin-bottom: 0; }
+  .contact .copyright { margin-top: 0; text-align: right; }
 
   /* Mobile artwork policy: preserve every illustration's complete native ratio. */
   .philosophy-page img,
