@@ -357,17 +357,41 @@ footer { display: flex; justify-content: space-between; margin-top: auto; paddin
   }
   .philosophy-light { background-color: #eee9dd; }
   .philosophy-page {
+    height: clamp(620px, 165vw, 720px);
     min-height: 0;
     overflow: hidden;
+    isolation: isolate;
   }
   .philosophy-page img {
-    position: relative;
-    inset: auto;
+    position: absolute;
+    z-index: 1;
+    inset: 0;
     width: 100%;
-    height: auto;
-    aspect-ratio: 1672 / 941;
+    height: 100%;
+    object-fit: contain;
   }
-  .philosophy-page::after { display: none; }
+  .philosophy-page::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    inset: -22px;
+    background: #090909 var(--art-bg, none) center / cover no-repeat;
+    filter: blur(18px);
+    opacity: .72;
+    transform: scale(1.06);
+  }
+  .philosophy-light::before {
+    background-color: #eee9dd;
+    opacity: .5;
+  }
+  .philosophy-page::after {
+    display: block;
+    z-index: 2;
+    background: linear-gradient(0deg, rgba(6,6,6,.96) 0%, rgba(6,6,6,.8) 32%, rgba(6,6,6,.18) 66%, transparent 82%);
+  }
+  .philosophy-light::after {
+    background: linear-gradient(0deg, rgba(238,233,221,.98) 0%, rgba(238,233,221,.86) 35%, rgba(238,233,221,.2) 68%, transparent 84%);
+  }
   .philosophy-copy,
   .philosophy-one .philosophy-copy,
   .philosophy-two .philosophy-copy,
@@ -375,15 +399,16 @@ footer { display: flex; justify-content: space-between; margin-top: auto; paddin
   .philosophy-four .philosophy-copy,
   .philosophy-five .philosophy-copy,
   .philosophy-six .philosophy-copy {
-    position: relative !important;
-    inset: auto !important;
-    left: auto !important;
-    right: auto !important;
+    position: absolute !important;
+    z-index: 3;
+    inset: auto 0 0 !important;
+    left: 0 !important;
+    right: 0 !important;
     top: auto !important;
-    bottom: auto !important;
+    bottom: 0 !important;
     width: 100%;
     max-width: none;
-    padding: 38px 24px 54px;
+    padding: 42px 24px 48px;
     text-align: left !important;
     transform: none;
   }
