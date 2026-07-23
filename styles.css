@@ -330,6 +330,7 @@ footer { display: flex; justify-content: space-between; margin-top: auto; paddin
 .qr-placeholder small { color: #9a9287; }
 
 @media (max-width: 800px) {
+  html { scroll-behavior: auto; }
   .directions { background-attachment: scroll; }
   .about { background-position: 35% center; }
   .vision { background-position: 58% center; }
@@ -355,6 +356,44 @@ footer { display: flex; justify-content: space-between; margin-top: auto; paddin
     background-color: #090909;
   }
   .philosophy-light { background-color: #eee9dd; }
+  .philosophy-page {
+    min-height: 0;
+    overflow: hidden;
+  }
+  .philosophy-page img {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1672 / 941;
+  }
+  .philosophy-page::after { display: none; }
+  .philosophy-copy,
+  .philosophy-one .philosophy-copy,
+  .philosophy-two .philosophy-copy,
+  .philosophy-three .philosophy-copy,
+  .philosophy-four .philosophy-copy,
+  .philosophy-five .philosophy-copy,
+  .philosophy-six .philosophy-copy {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100%;
+    max-width: none;
+    padding: 38px 24px 54px;
+    text-align: left !important;
+    transform: none;
+  }
+  .philosophy-copy.reveal,
+  .philosophy-copy.reveal.will-reveal,
+  .philosophy-copy.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
   .card-art {
     background-position: center !important;
     background-size: contain !important;
